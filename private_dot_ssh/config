@@ -1,0 +1,99 @@
+Host *
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/diego_rsa
+
+Host aws-workshop-ec2-test
+	HostName ec2-52-73-0-198.compute-1.amazonaws.com
+	User ubuntu
+	IdentityFile ~/.ssh/AWSWorkshop.pem
+
+Host summit-data
+    HostName 13.57.204.177
+    User ubuntu
+    IdentityFile ~/.ssh/diego_rsa
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host summit-data-staging
+	Hostname 54.183.246.12
+	User ubuntu
+	IdentityFile ~/.ssh/diego_rsa
+	IdentitiesOnly yes
+	ForwardAgent yes
+
+Host deepsaurus-ext
+	User diego
+	Hostname 91d808d79bce.sn.mynetname.net
+	Port 17822
+	ForwardAgent yes
+
+Host deepsaurus
+    User diego
+    Hostname 192.168.10.99
+    ForwardAgent yes
+
+Host deepbern-ext
+    User diego
+    Hostname 91d808d79bce.sn.mynetname.net
+    Port 17824
+    ForwardAgent yes
+
+# Alternativa para conectarse por un tunel a traves de deepsaurus:
+#Hostname 192.168.10.97
+#ProxyCommand ssh deepsaurus-ext nc %h %p
+
+Host deepbern
+    User diego
+    Hostname 192.168.10.97
+    ForwardAgent yes
+
+Host ubersuggest-aggr-submitter
+    User ubuntu
+    Hostname ec2-3-88-20-86.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/ubersuggest-key-pair.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host ubersuggest-ops
+    User ubuntu
+    Hostname ec2-34-229-15-169.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/ubersuggest-key-pair.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host ubersuggest-deploy
+    User ubuntu
+    Hostname ec2-3-218-143-54.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/ubersuggest-key-pair.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host frankfurt
+    User ubuntu
+    Hostname ec2-52-28-49-100.eu-central-1.compute.amazonaws.com
+    IdentityFile ~/.ssh/frankfurt.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host nvirginia-m5
+    User ubuntu
+    Hostname ec2-3-216-30-198.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/north-virginia.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host ubersuggest-sentry
+    User ubuntu
+    Hostname 52.9.65.188
+    IdentityFile ~/.ssh/ubersuggest-key-pair.pem
+    IdentitiesOnly yes
+    ForwardAgent yes
+
+Host ddlap
+    User dgadola
+    # Hostname ddlap
+    Hostname 192.168.50.233
+    IdentityFile ~/.ssh/diego_rsa
+    IdentitiesOnly yes
+    ForwardAgent yes
+
